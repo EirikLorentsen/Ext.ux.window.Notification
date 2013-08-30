@@ -34,7 +34,7 @@ and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
 - (Dmurat) Enabled reuse of notifications (closeAction: 'hide')
 - (Idonofrio) Destroying notification by default (closeAction: 'destroy')
 
-## 2.0 (2012-03-06)
+### 2.0 (2012-03-06)
 
 - Renamed some properties ending with "Delay" to the more correct: "Duration".
 - Moved the hiding animation out of destruction and into hide.
@@ -46,14 +46,14 @@ and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
 - (Jmaia) Center of edges can be used for positioning. Renamed corner property to position.
 - (Hpsam) Hiding or destroying manager does not cause errors.
 
-## 1.3 (2011-09-13)
+### 1.3 (2011-09-13)
 
 - Cleaned up component destruction
 
-## 1.2 (2011-09-12)
+### 1.2 (2011-09-12)
 
 - Added config options: stickOnClick and stickWhileHover.
 
-## 1.1 (2011-09-01)
+### 1.1 (2011-09-01)
 
 - Bugfix. Array.indexOf not universally implemented, causing errors in IE<=8. Replaced with Ext.Array.indexOf.
