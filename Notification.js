@@ -1,15 +1,14 @@
 /* 
- *	Notification / Toastwindow extension for Ext JS 4.x
+ *	Notification extension for Ext JS 4.x
+ *	Version: 2.1
  *
  *	Copyright (c) 2011 Eirik Lorentsen (http://www.eirik.net/)
  *
- *	Examples and documentation at: http://www.eirik.net/Ext/ux/window/Notification.html
+ *	Follow project on GitHub: https://github.com/EirikLorentsen/Ext.ux.window.Notification
  *
  *	Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) 
  *	and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  *
- *	Version: 2.1
- *	Last changed date: 2012-08-12
  */
 
 Ext.define('Ext.ux.window.Notification', {
@@ -491,23 +490,3 @@ Ext.define('Ext.ux.window.Notification', {
 	}
 
 });
-
-
-/*	Changelog:
- *
- *  2011-09-01 - 1.1: Bugfix. Array.indexOf not universally implemented, causing errors in IE<=8. Replaced with Ext.Array.indexOf.
- *  2011-09-12 - 1.2: Added config options: stickOnClick and stickWhileHover.
- *  2011-09-13 - 1.3: Cleaned up component destruction.
- *  2012-03-06 - 2.0: Renamed some properties ending with "Delay" to the more correct: "Duration".
- *                    Moved the hiding animation out of destruction and into hide.
- *                    Renamed the corresponding "destroy" properties to "hide".
- *                    (Hpsam) Changed addClass to addCls.
- *                    (Hpsam) Avoiding setting 'notification-fixed' when auto hiding.
- *                    (Justmyhobby) Using separate arrays to enable managers to mix alignments.
- *                    (Kreeve_ctisn) Removed default title.
- *                    (Jmaia) Center of edges can be used for positioning. Renamed corner property to position.
- *                    (Hpsam) Hiding or destroying manager does not cause errors.
- *  2012-08-12 - 2.1: Renamed autoHide to autoClose
- *                    (Dmurat) Enabled reuse of notifications (closeAction: 'hide')
- *                    (Idonofrio) Destroying notification by default (closeAction: 'destroy')
- */
