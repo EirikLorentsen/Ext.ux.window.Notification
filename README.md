@@ -13,10 +13,6 @@ New improved features include:
 NOTE: If you are using Ext v4.0.7 and have problems getting this version to work, try downloading the 2.0 version:
 http://www.eirik.net/Ext/ux/window/tags/Notification/2.0/Notification.js
 
-## Examples and documentation
-
-http://www.eirik.net/Ext/ux/window/Notification.html
-
 ## License
 
 Copyright (c) 2011 Eirik Lorentsen - http://www.eirik.net/
