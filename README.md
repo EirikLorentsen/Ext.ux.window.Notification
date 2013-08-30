@@ -1,5 +1,5 @@
 
-# Notification / Toastwindow extension for Ext JS 4.x (version: 2.1)
+# Notification extension for Ext JS 4.x (version: 2.1)
 
 New improved features include:
 - Multiple managers and notifications stacks
@@ -20,6 +20,7 @@ http://www.eirik.net/Ext/ux/window/Notification.html
 ## License
 
 Copyright (c) 2011 Eirik Lorentsen - http://www.eirik.net/
+Based on the Ext.ux.Notification plugin by efattal.
 
 Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) 
 and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
