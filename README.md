@@ -20,6 +20,7 @@ http://www.eirik.net/Ext/ux/window/Notification.html
 ## License
 
 Copyright (c) 2011 Eirik Lorentsen - http://www.eirik.net/
+
 Based on the Ext.ux.Notification plugin by efattal.
 
 Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) 
