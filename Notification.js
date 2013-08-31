@@ -7,7 +7,7 @@
  *	Follow project on GitHub: https://github.com/EirikLorentsen/Ext.ux.window.Notification
  *
  *	Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) 
- *	and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
+ *	and GPL (http://opensource.org/licenses/GPL-3.0) licenses.
  *
  */
 
