@@ -32,6 +32,8 @@ and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
 
 ### 2.0 (2012-03-06)
 
+http://www.eirik.net/Ext/ux/window/tags/Notification/2.0/Notification.js
+
 - Renamed some properties ending with "Delay" to the more correct: "Duration".
 - Moved the hiding animation out of destruction and into hide.
 - Renamed the corresponding "destroy" properties to "hide".
@@ -44,12 +46,18 @@ and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
 
 ### 1.3 (2011-09-13)
 
+http://www.eirik.net/Ext/ux/window/tags/Notification/1.3/Notification.js
+
 - Cleaned up component destruction
 
 ### 1.2 (2011-09-12)
 
+http://www.eirik.net/Ext/ux/window/tags/Notification/1.2/Notification.js
+
 - Added config options: stickOnClick and stickWhileHover.
 
 ### 1.1 (2011-09-01)
+
+http://www.eirik.net/Ext/ux/window/tags/Notification/1.1/Notification.js
 
 - Bugfix. Array.indexOf not universally implemented, causing errors in IE<=8. Replaced with Ext.Array.indexOf.
