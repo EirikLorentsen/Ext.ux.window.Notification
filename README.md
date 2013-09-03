@@ -1,5 +1,5 @@
 
-# Notification extension for Ext JS 4.x (version: 2.1)
+# Notification extension for Ext JS 4.x (version: 2.1.1)
 
 New improved features include:
 - Multiple managers and notifications stacks
@@ -9,9 +9,6 @@ New improved features include:
 - When a notification is closed any notifications above it slide down automatically.
 - Hovering the mouse over the notification delays auto closing.
 - Easy customization of css, animations, delays, spacings/padding etc.
-
-NOTE: If you are using Ext v4.0.7 and have problems getting this version to work, try downloading the 2.0 version:
-http://www.eirik.net/Ext/ux/window/tags/Notification/2.0/Notification.js
 
 ## License
 
@@ -24,7 +21,12 @@ and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
 
 ## Changelog:
 
-### 2.1 (2012-08-12)
+### 2.1.1
+
+- Bugfix: Compatible with Ext JS 4.0.7
+- Bugfix: Simplified hide function using fadeOut() eliminating some small snags
+
+### 2.1
 
 - Renamed autoHide to autoClose
 - (Dmurat) Enabled reuse of notifications (closeAction: 'hide')

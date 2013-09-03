@@ -1,6 +1,6 @@
 /* 
- *	Notification extension for Ext JS 4.x
- *	Version: 2.1
+ *	Notification extension for Ext JS 4.0.2+
+ *	Version: 2.1.1
  *
  *	Copyright (c) 2011 Eirik Lorentsen (http://www.eirik.net/)
  *
@@ -49,7 +49,7 @@ Ext.define('Ext.ux.window.Notification', {
 
 	// Private. Do not override!
 	isHiding: false,
-	readyToHide: false,
+	isFading: false,
 	destroyAfterHide: false,
 	closeOnMouseOut: false,
 
@@ -205,7 +205,7 @@ Ext.define('Ext.ux.window.Notification', {
 		// Avoid error messages if the manager does not have a dom element
 		if (me.manager && me.manager.el && me.manager.el.dom) {
 			if (!me.useXAxis) {
-				// Element should already be aligned verticaly
+				// Element should already be aligned vertically
 				return me.el.getLeft();
 			} else {
 				// Using getAnchorXY instead of getTop/getBottom should give a correct placement when document is used
@@ -231,7 +231,7 @@ Ext.define('Ext.ux.window.Notification', {
 		// Avoid error messages if the manager does not have a dom element
 		if (me.manager && me.manager.el && me.manager.el.dom) {
 			if (me.useXAxis) {
-				// Element should already be aligned horizontaly
+				// Element should already be aligned horizontally
 				return me.el.getTop();
 			} else {
 				// Using getAnchorXY instead of getTop/getBottom should give a correct placement when document is used
@@ -427,6 +427,7 @@ Ext.define('Ext.ux.window.Notification', {
 			var notifications = me.getNotifications(me.managerAlignment);
 			var index = Ext.Array.indexOf(notifications, me);
 			if (index != -1) {
+				// Requires Ext JS 4.0.2
 				Ext.Array.erase(notifications, index, 1);
 
 				// Slide "down" all notifications "above" the hidden one
@@ -440,49 +441,45 @@ Ext.define('Ext.ux.window.Notification', {
 	hide: function () {
 		var me = this;
 
-		// Avoids restarting the last animation on an element already underway with its hide animation
-		if (!me.isHiding && me.el) {
-
+		if (me.isHiding) {
+			if (!me.isFading) {
+				me.callParent(arguments);
+				// Must come after callParent() since it will pass through hide() again triggered by destroy()
+				me.isHiding = false;
+			}
+		} else {
+			// Must be set right away in case of double clicks on the close button
 			me.isHiding = true;
+			me.isFading = true;
 
 			me.cancelAutoClose();
-			me.stopAnimation();
 
-			me.el.animate({
-				to: {
-					opacity: 0
-				},
-				easing: 'easeIn',
-				duration: me.hideDuration,
-				dynamic: false,
-				listeners: {
-					afteranimate: function () {
-						me.removeFromManager();
-						me.readyToHide = true;
-						me.hide(me.animateTarget, me.doClose, me);
+			if (me.el) {
+				me.el.fadeOut({
+					opacity: 0,
+					easing: 'easeIn',
+					duration: me.hideDuration,
+					remove: me.destroyAfterHide,
+					listeners: {
+						afteranimate: function () {
+							me.isFading = false;
+							me.removeCls('notification-fixed');
+							me.removeFromManager();
+							me.hide();
+						}
 					}
-				}
-			});
-		}
-
-		// Calling parent's hide function to complete hiding
-		if (me.readyToHide) {
-			me.isHiding = false;
-			me.readyToHide = false;
-			me.removeCls('notification-fixed');
-			me.callParent(arguments);
-			if (me.destroyAfterHide) {
-				me.destroy();
+				});
 			}
 		}
+
+		return me;
 	},
 
 	destroy: function () {
 		var me = this;
-
 		if (!me.hidden) {
 			me.destroyAfterHide = true;
-			me.hide(me.animateTarget, me.doClose, me);
+			me.hide();
 		} else {
 			me.callParent(arguments);
 		}
