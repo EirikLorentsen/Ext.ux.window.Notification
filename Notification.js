@@ -104,6 +104,7 @@ Ext.define('Ext.ux.window.Notification', {
 
 	onRender: function() {
 		var me = this;
+		me.callParent(arguments);
 
 		me.el.hover(
 			function () {
@@ -118,8 +119,6 @@ Ext.define('Ext.ux.window.Notification', {
 			},
 			me
 		);
-
-		this.callParent(arguments);
 
 	},
 	
