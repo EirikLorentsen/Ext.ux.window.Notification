@@ -1,6 +1,8 @@
 
 # Notification extension for Ext JS 4.x (version: 2.1.1)
 
+[Examples and instructions](http://www.eirik.net/Ext/ux/window/Demo.html)
+
 New improved features include:
 - Multiple managers and notifications stacks
 - The static manager object is eliminated completely, allowing notifications to attach to different components using their x and y coordinates to slide in the notifications.
