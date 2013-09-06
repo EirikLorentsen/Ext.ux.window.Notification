@@ -341,6 +341,8 @@ Ext.define('Ext.ux.window.Notification', {
 	afterShow: function () {
 		var me = this;
 
+		me.callParent(arguments);
+
 		var notifications = me.getNotifications(me.managerAlignment);
 
 		if (notifications.length) {
@@ -355,7 +357,12 @@ Ext.define('Ext.ux.window.Notification', {
 
 		Ext.Array.include(notifications, me);
 
+		// Using from coordinates makes sure the windows does not flicker into the center of the viewport during animation
 		me.el.animate({
+			from: {
+				x: me.el.getX(),
+				y: me.el.getY()
+			},
 			to: {
 				x: me.xPos,
 				y: me.yPos,
@@ -366,7 +373,6 @@ Ext.define('Ext.ux.window.Notification', {
 			dynamic: true
 		});
 
-		this.callParent(arguments);
 	},
 	
 	slideBack: function () {
