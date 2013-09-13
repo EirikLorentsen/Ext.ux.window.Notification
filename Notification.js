@@ -1,6 +1,6 @@
 /* 
  *	Notification extension for Ext JS 4.0.2+
- *	Version: 2.1.1
+ *	Version: 2.1.2
  *
  *	Copyright (c) 2011 Eirik Lorentsen (http://www.eirik.net/)
  *
@@ -357,7 +357,7 @@ Ext.define('Ext.ux.window.Notification', {
 
 		Ext.Array.include(notifications, me);
 
-		// Using from coordinates makes sure the windows does not flicker into the center of the viewport during animation
+		// Repeating from coordinates makes sure the windows does not flicker into the center of the viewport during animation
 		me.el.animate({
 			from: {
 				x: me.el.getX(),

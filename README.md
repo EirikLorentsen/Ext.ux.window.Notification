@@ -1,5 +1,5 @@
 
-# Notification extension for Ext JS 4.x (version: 2.1.1)
+# Notification extension for Ext JS 4.x (version: 2.1.2)
 
 [**Examples and instructions**](http://www.eirik.net/Ext/ux/window/Demo.html)
 
@@ -22,6 +22,10 @@ Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
 and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
 
 ## Changelog:
+
+### 2.1.2
+
+- (Brian428) Bugfix: Specifying origin x and y coordinates in the initial animation to avoid irregular animation. 
 
 ### 2.1.1
 
