@@ -1,6 +1,6 @@
 /* 
  *	Notification extension for Ext JS 4.0.2+
- *	Version: 2.1.2
+ *	Version: 2.1.3
  *
  *	Copyright (c) 2011 Eirik Lorentsen (http://www.eirik.net/)
  *
