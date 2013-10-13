@@ -471,7 +471,7 @@ Ext.define('Ext.ux.window.Notification', {
 							me.isFading = false;
 							me.removeCls('notification-fixed');
 							me.removeFromManager();
-							me.hide();
+							me.hide(me.animateTarget, me.doClose, me);
 						}
 					}
 				});
@@ -485,7 +485,7 @@ Ext.define('Ext.ux.window.Notification', {
 		var me = this;
 		if (!me.hidden) {
 			me.destroyAfterHide = true;
-			me.hide();
+			me.hide(me.animateTarget, me.doClose, me);
 		} else {
 			me.callParent(arguments);
 		}
