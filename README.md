@@ -23,6 +23,10 @@ and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
 
 ## Changelog:
 
+### 2.1.3
+
+- (anotheri) Bugfix: Notification destroys properly on close()
+
 ### 2.1.2
 
 - (Brian428) Bugfix: Specifying origin x and y coordinates in the initial animation to avoid irregular animation. 
