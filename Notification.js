@@ -46,7 +46,17 @@ Ext.define('Ext.ux.window.Notification', {
 	autoCloseDelay: 7000,
 	stickOnClick: true,
 	stickWhileHover: true,
-
+	
+	/* 
+	 * dynamic option should be false in most of the cases while animating since the content of a notification 
+	 * doesn't change often.
+	 *
+	 * Regarding dynamic, the documentation says 
+	 * "Use sparingly as laying out on every intermediate size change is an expensive operation"
+	 * http://docs.sencha.com/extjs/4.2.1/#!/api/Ext.util.Animate-method-animate
+	 */
+	useDynamicAnimation: false,
+	
 	// Private. Do not override!
 	isHiding: false,
 	isFading: false,
@@ -370,7 +380,7 @@ Ext.define('Ext.ux.window.Notification', {
 			},
 			easing: me.slideInAnimation,
 			duration: me.slideInDuration,
-			dynamic: true
+			dynamic: me.useDynamicAnimation
 		});
 
 	},
@@ -379,7 +389,7 @@ Ext.define('Ext.ux.window.Notification', {
 		var me = this;
 
 		var notifications = me.getNotifications(me.managerAlignment);
-		var index = Ext.Array.indexOf(notifications, me)
+		var index = Ext.Array.indexOf(notifications, me);
 
 		// Not animating the element if it already started to hide itself or if the manager is not present in the dom
 		if (!me.isHiding && me.el && me.manager && me.manager.el && me.manager.el.dom && me.manager.el.isVisible()) {
@@ -401,7 +411,7 @@ Ext.define('Ext.ux.window.Notification', {
 				},
 				easing: me.slideBackAnimation,
 				duration: me.slideBackDuration,
-				dynamic: true
+				dynamic: me.useDynamicAnimation
 			});
 		}
 	},
